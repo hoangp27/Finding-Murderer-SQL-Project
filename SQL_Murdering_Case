@@ -1,0 +1,37 @@
+
+select * from interview
+
+select person_id, name, address_street_name, address_number from interview
+inner join person on interview.person_id = person.id
+where address_street_name = 'Northwestern Dr'
+Order by address_number Desc
+
+/*14887 Morty Schapiro
+
+select person_id, name, address_street_name, address_number from interview
+inner join person on interview.person_id = person.id
+where address_street_name = 'Franklin Ave'  and name like 'Annabel%'
+
+/*16371 Annabel Miller
+
+Select * from interview
+Where person_id in (14887,16371)
+
+
+/*I heard a gunshot and then saw a man run out. He had a "Get Fit Now Gym" bag. The membership number on the bag started with "48Z". Only gold members have those bags. The man got into a car with a plate that included "H42W".
+I saw the murder happen, and I recognized the killer from my gym when I was working out last week on January the 9th.
+
+
+Select * from get_fit_now_check_in as  a
+inner join get_fit_now_member as b on a.membership_id = b.id
+Where check_in_date like '%0109' and membership_status = 'gold' and id LIKE '48Z%'
+
+/*28819 Joe Germuska 
+/*67318 Jeremy Bowers
+
+
+Select * from person a
+inner join drivers_license b on a.license_id = b.id
+where a.id in (28819,67318) and plate_number like '%H42W%'
+
+/* And the murder is Jeremy Bowers
